@@ -10,6 +10,7 @@ public class VarTypeInferenceExample {
         //to iterate the above collection using var
         for(var name : list){
             System.out.println("name="+name);
+            //testing
         }
 
         //using below ofEntries we can create immutable map
@@ -21,5 +22,11 @@ public class VarTypeInferenceExample {
             System.out.println("s = "+s);
             System.out.println("string ="+strings);
         });
+        var transformedString = transform("dayalankumar");
+        System.out.println("transformedString value is=="+transformedString);
+    }
+
+    static String transform(String name){
+        return name.toUpperCase();
     }
 }

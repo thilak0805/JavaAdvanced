@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 public class VarTypeInferenceExample {
+
+    // var cannot be used as instance variable
+    // private var x = "abc";
     public static void main(String[] args) {
         var list = List.of("dayalan","kumar");
         System.out.printf("var value is ===="+list);
@@ -24,8 +27,18 @@ public class VarTypeInferenceExample {
         });
         var transformedString = transform("dayalankumar");
         System.out.println("transformedString value is=="+transformedString);
+
+        // not allowed
+        // var x = null; not allowed in var
+      //   var x = "ABC";
+         //x = 5;
+
+        // var is not a reserved keyword
+        var var = "Java";
+
     }
 
+    // we cannot use var in method parameters too
     static String transform(String name){
         return name.toUpperCase();
     }

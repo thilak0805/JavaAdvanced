@@ -38,6 +38,22 @@ public class DaysInMonth {
         };
     }
 
+    // for the input we are using in below switch expression 'month' we have covered all possible scenarios
+    // so we can avoid default statement. This is exhaustive nature of enhanced switch.
+
+    public static int getDaysV3(Month month, int year){
+        return switch (month){
+            case SEPTEMBER, APRIL, JUNE, NOVEMBER -> 30;
+            //case FEBRUARY -> Year.isLeap(year)? 29 : 28;
+            case FEBRUARY -> {
+                System.out.println("Check if year is = "+year+" is a leap year");
+                yield Year.isLeap(year)?29:28;
+            }
+            case JANUARY, MARCH, MAY, JULY , AUGUST , OCTOBER, DECEMBER -> 31;
+           // default -> 31;
+        };
+    }
+
     public static void main(String[] args) {
 
         System.out.println(" getDays V2========"+getDaysV2(Month.APRIL, 2023));

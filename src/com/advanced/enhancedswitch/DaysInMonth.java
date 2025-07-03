@@ -29,7 +29,11 @@ public class DaysInMonth {
     public static int getDaysV2(Month month, int year){
         return switch (month){
             case SEPTEMBER, APRIL, JUNE, NOVEMBER -> 30;
-            case FEBRUARY -> Year.isLeap(year)? 29 : 28;
+            //case FEBRUARY -> Year.isLeap(year)? 29 : 28;
+            case FEBRUARY -> {
+                System.out.println("Check if year is = "+year+" is a leap year");
+                yield Year.isLeap(year)?29:28;
+            }
             default -> 31;
         };
     }

@@ -1,5 +1,5 @@
 package com.advanced.textblocks;
-
+// textblocks - feature introduced in java15
 public class TextBlocks {
 
     public static String multilineString(){
